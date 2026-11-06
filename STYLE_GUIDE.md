@@ -17,8 +17,9 @@ Shared visual and audio rules for every lecture video.
 
 ### Audio
 
-- **No AI narration.** The host records the voice-over separately. Leave the voice-over track empty.
-- Light, warm background music bed at about -28 LUFS, ducking under voice. Soft UI sound effects (pops, whooshes, clicks) at low volume.
+- **Silent video.** Generate no audio of any kind: no AI narration or voice, no background music, no sound effects. Leave the audio track silent.
+- The host records the voice-over separately from the "Narration voice-over script" section in each lecture prompt. The script is for the host to read only; the video tool must not speak it, caption it or show it as on-screen text.
+- Do not add music or sound effects unless the host explicitly asks for them.
 - Keep each scene's visuals readable without audio, and hold the final state of each beat 1 to 2 seconds so it can be stretched to match the voice-over.
 
 ### Part colors

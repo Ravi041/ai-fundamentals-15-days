@@ -27,8 +27,8 @@ This repo holds the video-generation prompt for each lecture. The 5 beginner pro
 ## How to use a prompt
 
 1. Open `lectures/day-NN-.../prompt.md`.
-2. Paste the **Prompt** section, together with the style, storyboard and references, into your video tool, or use it as the brief for your motion designer.
-3. Record the voice-over using the voice-over cues, then stretch the scenes to fit.
+2. Paste the **Prompt** section, together with the style, storyboard and references, into your video tool, or use it as the brief for your motion designer. The video comes out silent: no narration, music or sound effects.
+3. Record your voice-over by reading the **Narration voice-over script** section, then stretch the scenes to fit.
 4. Capture fresh screenshots of the reference pages before rendering.
 
 Shared visual rules live in [STYLE_GUIDE.md](STYLE_GUIDE.md). Every lecture prompt also includes them, so each one can be used on its own.

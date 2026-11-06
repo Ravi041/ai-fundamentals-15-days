@@ -4,7 +4,7 @@
 
 ## Prompt
 
-Create a complete 12 min educational YouTube explainer video in 4K (3840 x 2160, 16:9, 30 fps) for Day 1 of a 15-day beginner course called "AI Fundamentals in 15 Days". The lecture title is "What AI Really Is (and Isn't)". Use a warm cream paper background throughout, flat 2D explainer motion graphics, and clean browser-window frames for references to public documentation web pages. Do not generate any narration or voice; the host will record the voice-over separately, so leave room for it and keep on-screen text short. Follow the visual style, scene list and references below exactly.
+Create a complete 12 min educational YouTube explainer video in 4K (3840 x 2160, 16:9, 30 fps) for Day 1 of a 15-day beginner course called "AI Fundamentals in 15 Days". The lecture title is "What AI Really Is (and Isn't)". Use a warm cream paper background throughout, flat 2D explainer motion graphics, and clean browser-window frames for references to public documentation web pages. Do not generate any audio: no narration or voice, no background music and no sound effects. Deliver a silent video. The host will read the narration voice-over script below and record it separately, so leave room for it and keep on-screen text short. The script is for the host to read only: do not speak, sing or caption it, and do not show its sentences as on-screen text. Use it only to time each beat and to match the code and examples shown on screen to what the host will say. Follow the visual style, scene list and references below exactly.
 
 ### Learning goals
 
@@ -27,8 +27,9 @@ Create a complete 12 min educational YouTube explainer video in 4K (3840 x 2160,
 
 ### Audio
 
-- **No AI narration.** The host records the voice-over separately. Leave the voice-over track empty.
-- Light, warm background music bed at about -28 LUFS, ducking under voice. Soft UI sound effects (pops, whooshes, clicks) at low volume.
+- **Silent video.** Generate no audio of any kind: no AI narration or voice, no background music, no sound effects. Leave the audio track silent.
+- The host records the voice-over separately from the narration voice-over script at the end of this storyboard.
+- Do not add music or sound effects unless the host explicitly asks for them.
 - Keep each scene's visuals readable without audio, and hold the final state of each beat 1 to 2 seconds so it can be stretched to match the voice-over.
 
 ### Scene-by-scene storyboard
@@ -89,6 +90,124 @@ Timings are targets; stretch or trim each scene to fit the recorded voice-over.
 - On-screen text: Tomorrow: How Machines Learn
 - Voice-over cue (host): Preview Day 2.
 
+### Narration voice-over script (host only, do not generate audio)
+
+> For the host to read while recording. The video tool must not voice, sing, caption or display these sentences. About 1,370 words: roughly 11 minutes of speaking at a relaxed 130 words per minute, with the rest of the 12 min runtime left for pauses on visuals and demo steps. Each section starts where its scene begins; a **[at m:ss]** cue marks the on-screen moment to start that line on. If you run short, pause on the visual; if you run long, stretch the scene.
+
+#### Scene 1 · 0:00 to 0:30 · Cold open
+
+**[at 0:01, cards pop in]** Your phone unlocked when it saw your face. Your inbox quietly moved a scam email into spam. Your maps app rerouted you around traffic. And maybe you asked a chatbot to help with an email.
+
+**[at 0:05, headline]** By the time you finished breakfast, you'd probably used AI twenty times. Without even noticing.
+
+**[at 0:22, cards merge into one dot]** All of these feel different. But underneath, they share one idea.
+
+**[at 0:25, "But what actually is it?"]** So what actually *is* AI? Let's find out.
+
+#### Scene 2 · 0:30 to 0:50 · Course journey map
+
+**[at 0:31]** Welcome to *AI Fundamentals in 15 Days*. I'm Ravi, and over the next fifteen lectures we'll go from zero to deploying real AI apps, using both paid models like ChatGPT and Claude and free, open-source models.
+
+**[at 0:34, mascot walks in]** This little robot is Token. He'll walk the map with us. Today is stop number one: what AI really is, and what it isn't.
+
+#### Scene 3 · 0:50 to 3:00 · The nesting circles
+
+**[at 0:51, outer circle]** Let's start with the words everyone mixes up. The biggest circle is **artificial intelligence**. AI is any technique that lets a computer do something we'd normally call intelligent: planning, recognizing, deciding, understanding language.
+
+**[at 0:56, "Chess engine"]** A classic example is a chess engine. Early chess programs didn't learn anything. Humans wrote the rules and the search strategy by hand. It's still AI, just a very old-school kind.
+
+**[at 1:14, second circle]** Inside AI sits **machine learning**. Here, instead of writing every rule ourselves, we give the computer lots of examples and let it find the patterns on its own.
+
+**[at 1:19, "Spam filter"]** Your spam filter is a perfect example. Nobody hand-wrote a rule for every scam email on the internet. The filter learned from millions of emails that people marked as spam or not spam. Tomorrow's whole lecture is about how that learning works.
+
+**[at 1:38, third circle]** Inside machine learning is **deep learning**. Deep learning uses neural networks with many layers, loosely inspired by the brain. It's what made computers genuinely good at seeing, hearing, and reading.
+
+**[at 1:43, "Face unlock"]** Face unlock on your phone uses deep learning. It turns your face into a pattern of numbers and checks whether it matches, even with new glasses or bad lighting.
+
+**[at 2:01, inner circle]** And right in the middle is the newest layer: **generative AI**. These models don't just recognize or predict things. They *create* new things: text, images, code, audio.
+
+**[at 2:06, "ChatGPT · Claude"]** ChatGPT and Claude live here. They're built on deep learning, which is part of machine learning, which is part of AI. So when someone says "AI" today, they usually mean this tiny inner circle. But it's only one part of a much bigger field.
+
+**[at 2:30, slow push in]** Keep this picture in your head. Every lecture in this course fits somewhere inside these circles.
+
+#### Scene 4 · 3:00 to 5:15 · 70 years of AI in 6 moments
+
+**[at 3:00]** Now, AI isn't new. It's been around for about seventy years. Let's walk through six moments that got us here.
+
+**[at 3:02, 1956]** **1956.** A small group of researchers met for a summer workshop at Dartmouth College and gave the field its name: artificial intelligence. They were very optimistic. They thought a few smart people could crack it in one summer. It took a bit longer.
+
+**[at 3:21, 1997]** **1997.** IBM's Deep Blue beat Garry Kasparov, the world chess champion. It was a huge headline, but Deep Blue was mostly raw computing power and hand-written rules. Brilliant at chess, useless at anything else.
+
+**[at 3:42, 2012]** **2012.** A neural network called AlexNet blew away the competition at recognizing objects in images. This is the moment deep learning took off, thanks to more data and powerful graphics chips called GPUs.
+
+**[at 4:04, 2017]** **2017.** Researchers at Google published a paper with a catchy title: "Attention Is All You Need." It introduced the **transformer**, the design behind almost every modern language model. The "T" in GPT stands for transformer. Remember this one; we'll open it up on Day 5.
+
+**[at 4:26, 2022]** **2022.** ChatGPT launched, and it reached a hundred million users faster than any app before it. Suddenly, anyone could talk to AI in plain English.
+
+**[at 4:48, Today]** And **today**, we have a whole landscape: powerful paid models like ChatGPT and Claude, and open models like Llama, Qwen and Gemma that you can download and run on your own laptop. You'll use both in this course.
+
+#### Scene 5 · 5:15 to 7:15 · Where today's AI actually sits
+
+**[at 5:16, axes draw]** Here's another way to sort AI. Two questions.
+
+**[at 5:20, "Predictive"]** First: does it *predict* or *classify* something? Is this email spam? Will this customer cancel? What will the temperature be tomorrow?
+
+**[at 5:26, "Generative"]** Or does it *generate* something new, like a paragraph, a picture, or a piece of code?
+
+**[at 5:34, "General"]** Second question: how general is it? Can it learn almost any task, like a person can?
+
+**[at 5:39, "Narrow"]** Or is it narrow, built for one specific job?
+
+**[at 5:50, predictive examples]** Spam filters, face unlock and recommendation feeds are all narrow and predictive. Each one is excellent at exactly one thing. Your spam filter can't recommend a movie, and your movie recommender can't unlock your phone.
+
+**[at 6:12, "Image generators"]** Image generators are generative, but still narrow. They make pictures, and that's it.
+
+**[at 6:18, "ChatGPT · Claude"]** ChatGPT and Claude are generative and much broader. They can write, summarize, translate, explain code and a lot more. That's why they feel so different. But they're still not truly general.
+
+**[at 6:38, AGI box]** That top area is what people call **general AI**, or AGI: a system that can learn and do almost anything a person can. Whether and when we'll get there is one of the biggest debates in tech. For now, the honest answer is: we're not there yet. Everything in this course is about the bottom half, the AI that's real, useful and available today.
+
+#### Scene 6 · 7:15 to 9:15 · Myth vs fact
+
+**[at 7:15]** Before we go further, let's clear up three myths you'll hear all the time.
+
+**[at 7:17, myth 1]** Myth one: *AI thinks like a human.*
+
+**[at 7:32, flip]** Fact: it doesn't. A language model learns patterns from huge amounts of text and predicts what comes next. That can look a lot like thinking. But there are no feelings, no lived experience, and no understanding the way you and I understand things. Powerful pattern matching, not a person.
+
+**[at 7:53, myth 2]** Myth two: *AI is always right.*
+
+**[at 8:08, flip]** Fact: AI can be confidently wrong. It can invent a book that doesn't exist, or a statistic that sounds perfect but is made up. We call these mistakes **hallucinations**. So the rule is simple: trust, but verify, especially for facts, numbers and anything important.
+
+**[at 8:30, myth 3]** Myth three: *AI will replace every job.*
+
+**[at 8:44, flip]** Fact: AI changes *tasks* more than it removes whole jobs. It's great at drafts, summaries and repetitive work. The people who gain the most are the ones who learn to use it well. And that's exactly what you're doing right now.
+
+#### Scene 7 · 9:15 to 11:15 · Try it: 3 AI tools in 10 minutes
+
+**[at 9:16, browser frame]** Okay, your turn. Your homework today takes about ten minutes, and it'll make everything we just covered feel real.
+
+**[at 9:20, item 1]** First, open a chatbot. ChatGPT or Claude, both have free versions. Ask it to explain something you already know really well, like your job, your hometown, or your favourite sport. Then check: what did it get right, and where did it slip?
+
+**[at 9:42, item 2]** Second, go to Teachable Machine, at teachablemachine.withgoogle.com. It's a free Google tool that runs in your browser. Start an image project, show it your face for one class and, say, a coffee mug for another, and train it. In about a minute, you've built your own image classifier. That's machine learning, live.
+
+**[at 10:04, item 3]** Third, open your YouTube home page. Look at what it recommends and ask yourself: why these videos? What has it learned about me? That's a recommendation system, one of the most widely used AIs in the world.
+
+**[at 10:30, note card]** For each one, write down two things: what is it great at, and where does it fail? Hold on to those notes. We'll come back to them.
+
+#### Scene 8 · 11:15 to 11:45 · Recap
+
+**[at 11:16]** So, today in three lines.
+
+**[at 11:17]** One: AI is a family of techniques, not one single thing.
+
+**[at 11:22]** Two: generative AI, like ChatGPT and Claude, is the newest, innermost layer.
+
+**[at 11:27]** And three: it's powerful, but it's not magic. Always check its work.
+
+#### Scene 9 · 11:45 to 12:00 · Tomorrow
+
+**[at 11:47, Token walks to stop 2]** Tomorrow, we open up that machine learning circle and see how computers actually learn from data. See you on Day 2.
+
 ### Web page references to show on screen
 
 Show each page in the browser-window frame described above, with the URL visible. Open each link and capture a fresh screenshot before rendering, since docs pages move and change (links written November 2026).
@@ -106,7 +225,6 @@ Try three AI tools (a chatbot, an image classifier, a recommendation feed) and n
 
 ### Deliverables
 
-- Master video: 3840 x 2160, 30 fps, no narration, music and SFX on separate stems
-- Separate stems: music bed, sound effects
+- Master video: 3840 x 2160, 30 fps, silent (no narration, music or sound effects)
 - Thumbnail: 3840 x 2160 on the cream background, large title text "Day 1: What AI Really Is (and Isn't)", mascot and the part accent color
 - Chapter markers matching the scene list, for the YouTube description

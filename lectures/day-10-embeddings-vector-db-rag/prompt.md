@@ -4,7 +4,7 @@
 
 ## Prompt
 
-Create a complete 15 min educational YouTube explainer video in 4K (3840 x 2160, 16:9, 30 fps) for Day 10 of a 15-day beginner course called "AI Fundamentals in 15 Days". The lecture title is "Embeddings, Vector Databases and RAG". Use a warm cream paper background throughout, flat 2D explainer motion graphics, and clean browser-window frames for references to public documentation web pages. Do not generate any narration or voice; the host will record the voice-over separately, so leave room for it and keep on-screen text short. Follow the visual style, scene list and references below exactly.
+Create a complete 15 min educational YouTube explainer video in 4K (3840 x 2160, 16:9, 30 fps) for Day 10 of a 15-day beginner course called "AI Fundamentals in 15 Days". The lecture title is "Embeddings, Vector Databases and RAG". Use a warm cream paper background throughout, flat 2D explainer motion graphics, and clean browser-window frames for references to public documentation web pages. Do not generate any audio: no narration or voice, no background music and no sound effects. Deliver a silent video. The host will read the narration voice-over script below and record it separately, so leave room for it and keep on-screen text short. The script is for the host to read only: do not speak, sing or caption it, and do not show its sentences as on-screen text. Use it only to time each beat and to match the code and examples shown on screen to what the host will say. Follow the visual style, scene list and references below exactly.
 
 ### Learning goals
 
@@ -27,8 +27,9 @@ Create a complete 15 min educational YouTube explainer video in 4K (3840 x 2160,
 
 ### Audio
 
-- **No AI narration.** The host records the voice-over separately. Leave the voice-over track empty.
-- Light, warm background music bed at about -28 LUFS, ducking under voice. Soft UI sound effects (pops, whooshes, clicks) at low volume.
+- **Silent video.** Generate no audio of any kind: no AI narration or voice, no background music, no sound effects. Leave the audio track silent.
+- The host records the voice-over separately from the narration voice-over script at the end of this storyboard.
+- Do not add music or sound effects unless the host explicitly asks for them.
 - Keep each scene's visuals readable without audio, and hold the final state of each beat 1 to 2 seconds so it can be stretched to match the voice-over.
 
 ### Scene-by-scene storyboard
@@ -95,6 +96,124 @@ Timings are targets; stretch or trim each scene to fit the recorded voice-over.
 - On-screen text: Tomorrow: Tools and Agents
 - Voice-over cue (host): Preview Day 11.
 
+### Narration voice-over script (host only, do not generate audio)
+
+> For the host to read while recording. The video tool must not voice, sing, caption or display these sentences. About 1,380 words: roughly 11 minutes of speaking at a relaxed 130 words per minute, with the rest of the 15 min runtime left for pauses on visuals and demo steps. Each section starts where its scene begins; a **[bracketed cue]** marks the on-screen moment to start that line on. If you run short, pause on the visual; if you run long, stretch the scene.
+
+#### Scene 1 · 0:00 to 0:30 · Cold open hook
+
+**[user asks about leave policy, bot makes something up]** An employee asks the company chatbot: "How many days of parental leave do I get?" It answers instantly, and confidently: "Twelve weeks." Totally made up.
+
+**[rewind, bot opens a document, answers with source tag]** Now rewind. This time, before answering, the bot looks up the real policy document, finds the right page, and answers with the correct number, plus a link to the source. That's the difference we'll build today. Give the model an open book.
+
+#### Scene 2 · 0:30 to 0:45 · Journey map
+
+**[Token at stop 10]** Welcome to Day 10. Yesterday you made your first API calls. Today you'll connect a model to your own documents, using a technique called RAG. It's one of the most useful things you can build with AI.
+
+#### Scene 3 · 0:45 to 2:30 · Why LLMs don't know your data
+
+**[library with "closed on" date sign]** Think of a model's knowledge as a huge library. It's read an enormous amount. But the doors closed on a certain date, its **training cutoff**. Anything that happened after that, it simply hasn't read.
+
+**[private files in a locked box outside]** And there's a bigger problem. Your company handbook, your contracts, your notes, your product manuals. None of that was ever in the library. It's private. The model has never seen it.
+
+**[hold]** So when you ask about it, the model does what we learned on Day 5: it predicts what sounds likely. That's how you get a confident, wrong answer.
+
+**[hold]** The fix isn't to retrain the model. It's much simpler. Before the model answers, we find the relevant pieces of your documents and paste them into the prompt. Remember grounding from Day 7? This is grounding, done automatically. It's called **RAG**, short for **Retrieval-Augmented Generation**. First retrieve, then generate.
+
+#### Scene 4 · 2:30 to 5:30 · The RAG pipeline
+
+**[pipeline outline]** A RAG system has six stages. Let's build it one piece at a time.
+
+**[Load: PDF]** Stage one: **Load**. We read the document into plain text. A PDF, a web page, a Word file, it all becomes text.
+
+**[Chunk: PDF slices into cards with overlaps]** Stage two: **Chunk**. A whole handbook is too big to paste into every prompt. So we slice it into small pieces called chunks, maybe a few paragraphs each. And notice the small overlaps between cards. Each chunk shares a sentence or two with the next, so an idea that falls on the edge isn't cut in half.
+
+**[Embed: cards become glowing dots]** Stage three: **Embed**. Each chunk goes through an embedding model, and becomes a list of numbers, a point in meaning-space. Exactly like the words we saw on Day 5, but now for whole paragraphs.
+
+**[Store: dots fly into the database cylinder]** Stage four: **Store**. We save all those points, along with the original text, in a special kind of database built for this, called a **vector database**.
+
+**[hold]** Those first four stages happen once, ahead of time. Think of it as building the index of a book. The next two happen every time someone asks a question.
+
+**[Retrieve]** Stage five: **Retrieve**. We embed the user's question, and ask the database: which chunks are closest in meaning?
+
+**[Generate]** And stage six: **Generate**. We put those chunks into the prompt with an instruction like: "Answer using only the context below. If the answer isn't there, say you don't know." Then we send it to the model, just like on Day 9.
+
+**[full pipeline]** Load, chunk, embed, store. Then retrieve and generate. That's all of RAG.
+
+#### Scene 5 · 5:30 to 7:45 · Similarity search
+
+**[3D vector space of dots]** Let's zoom in on the retrieve step, because this is where the magic happens. Here's our vector space. Every dot is one chunk of the handbook.
+
+**[question becomes a new dot]** The user asks: "How much time off do I get when I have a baby?" That question is embedded too, so it becomes a dot in the same space.
+
+**[nearest three dots light up]** Now we find its nearest neighbors. These three chunks light up. They're about parental leave, even though the question never used the words "parental" or "leave". That's the power of embeddings. They match meaning, not just keywords. An old keyword search would have missed this completely. To measure closeness, most systems use something called cosine similarity. It checks whether two arrows point in the same direction. You don't need the maths, just the idea: same direction, similar meaning.
+
+**[lines connect: top-k]** How many chunks we grab is called **top-k**. Here, k is three. Too few, and you might miss the answer. Too many, and you fill the prompt with noise and cost.
+
+**[chunks slide into the prompt card]** Those three chunks slide into the prompt, right next to the question. Now the model has an open book, and the answer is right there in front of it.
+
+#### Scene 6 · 7:45 to 9:30 · Vector databases
+
+**[row of database cylinders]** So where do the vectors live? You've got lots of choices. Here are four you'll hear about.
+
+**[Chroma: local]** **Chroma** is open source and runs right inside your Python program, saving to a local folder. Nothing to set up. It's perfect for learning and prototypes, so it's what we'll use today.
+
+**[FAISS: library]** **FAISS**, from Meta, is a super-fast open-source library for searching through millions of vectors. It's more of an engine than a full database.
+
+**[pgvector: Postgres]** **pgvector** adds vector search to Postgres, a hugely popular regular database. If your app already uses Postgres, this keeps everything in one place.
+
+**[Pinecone: cloud]** And **Pinecone** is a fully managed cloud service. You pay, and they handle the scaling.
+
+**[hold]** My advice: start simple. Use Chroma until you have a real reason to change. The RAG idea stays exactly the same whichever one you pick.
+
+#### Scene 7 · 9:30 to 11:00 · Tuning and citations
+
+**[chunk size slider]** When your RAG answers are off, here's what to tweak. First, **chunk size**. Chunks that are too small lose context. Too big, and the important sentence gets buried. A few hundred words is a good place to start.
+
+**[overlap slider]** Second, **overlap**. A little overlap, maybe ten to twenty percent, stops ideas from being split in half.
+
+**[top-k]** Third, **top-k**. If the answer is often missing, retrieve a few more chunks.
+
+**[source chips: page 4, page 12]** And finally, always **cite your sources**. Store the page number with each chunk, and show it next to the answer. Now users can click and check for themselves. It builds trust, and it makes wrong answers easy to spot.
+
+**[hold]** When debugging, always look at which chunks were retrieved first. If the right chunk wasn't retrieved, no prompt in the world will fix the answer.
+
+#### Scene 8 · 11:00 to 14:15 · Chat with your PDF
+
+**[notebook recording placeholder]** Let's build it. Open a new Colab notebook, and pick any PDF you know well. A user manual, a policy document, or a research paper.
+
+**[hold]** First, install the tools: `pip install chromadb sentence-transformers pypdf`. Pypdf reads the PDF, sentence-transformers makes the embeddings, and Chroma stores them.
+
+**[sentence-transformers docs]** Step one, load. Use pypdf to read the text from each page, and keep track of the page number.
+
+**[hold]** Step two, chunk. Split each page into pieces of a few hundred words, with a little overlap.
+
+**[hold]** Step three, embed. Load a small embedding model from Sentence Transformers. A popular starting point is all-MiniLM-L6-v2. It's free, small, and runs fine in Colab. Turn every chunk into an embedding.
+
+**[Chroma docs]** Step four, store. Create a Chroma collection, and add your chunks with their embeddings, and the page number as metadata.
+
+**[hold]** Step five, retrieve. Write a question, embed it with the same model, and query the collection for the top three results. Print them out and check: are these the right chunks?
+
+**[hold]** Step six, generate. Build a prompt with the chunks and the question, add "answer only from the context, and cite the page numbers", and send it to OpenAI, Claude, or your local Ollama model, with the code from Day 9.
+
+**[LangChain or LlamaIndex tutorial]** Once you've built it by hand, have a look at frameworks like LangChain and LlamaIndex. They wrap all six steps into a few lines. But doing it yourself first means you'll actually understand what's going on inside.
+
+**[hold]** Then test it. Ask five questions you know the answers to, and one that isn't in the document. Does it say "I don't know"? If it does, you've built a real RAG app.
+
+#### Scene 9 · 14:15 to 14:45 · Recap
+
+**[card slides up]** Today in three lines.
+
+**[check 1]** Retrieve first, then generate.
+
+**[check 2]** Embeddings find chunks by meaning, not just keywords.
+
+**[check 3]** And always cite your sources.
+
+#### Scene 10 · 14:45 to 15:00 · Teaser
+
+**[Token walks to stop 11 wearing a toolbelt]** So far our models can only talk. Tomorrow, we give them tools, and they start doing things. See you on Day 11.
+
 ### Web page references to show on screen
 
 Show each page in the browser-window frame described above, with the URL visible. Open each link and capture a fresh screenshot before rendering, since docs pages move and change (links written November 2026).
@@ -115,7 +234,6 @@ Load a PDF, chunk it, embed it into Chroma, and answer questions with sources.
 
 ### Deliverables
 
-- Master video: 3840 x 2160, 30 fps, no narration, music and SFX on separate stems
-- Separate stems: music bed, sound effects
+- Master video: 3840 x 2160, 30 fps, silent (no narration, music or sound effects)
 - Thumbnail: 3840 x 2160 on the cream background, large title text "Day 10: Embeddings, Vector Databases and RAG", mascot and the part accent color
 - Chapter markers matching the scene list, for the YouTube description

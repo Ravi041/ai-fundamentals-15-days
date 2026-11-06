@@ -4,7 +4,7 @@
 
 ## Prompt
 
-Create a complete 14 min educational YouTube explainer video in 4K (3840 x 2160, 16:9, 30 fps) for Day 8 of a 15-day beginner course called "AI Fundamentals in 15 Days". The lecture title is "Running Open-Source Models on Your Own Machine". Use a warm cream paper background throughout, flat 2D explainer motion graphics, and clean browser-window frames for references to public documentation web pages. Do not generate any narration or voice; the host will record the voice-over separately, so leave room for it and keep on-screen text short. Follow the visual style, scene list and references below exactly.
+Create a complete 14 min educational YouTube explainer video in 4K (3840 x 2160, 16:9, 30 fps) for Day 8 of a 15-day beginner course called "AI Fundamentals in 15 Days". The lecture title is "Running Open-Source Models on Your Own Machine". Use a warm cream paper background throughout, flat 2D explainer motion graphics, and clean browser-window frames for references to public documentation web pages. Do not generate any audio: no narration or voice, no background music and no sound effects. Deliver a silent video. The host will read the narration voice-over script below and record it separately, so leave room for it and keep on-screen text short. The script is for the host to read only: do not speak, sing or caption it, and do not show its sentences as on-screen text. Use it only to time each beat and to match the code and examples shown on screen to what the host will say. Follow the visual style, scene list and references below exactly.
 
 ### Learning goals
 
@@ -27,8 +27,9 @@ Create a complete 14 min educational YouTube explainer video in 4K (3840 x 2160,
 
 ### Audio
 
-- **No AI narration.** The host records the voice-over separately. Leave the voice-over track empty.
-- Light, warm background music bed at about -28 LUFS, ducking under voice. Soft UI sound effects (pops, whooshes, clicks) at low volume.
+- **Silent video.** Generate no audio of any kind: no AI narration or voice, no background music, no sound effects. Leave the audio track silent.
+- The host records the voice-over separately from the narration voice-over script at the end of this storyboard.
+- Do not add music or sound effects unless the host explicitly asks for them.
 - Keep each scene's visuals readable without audio, and hold the final state of each beat 1 to 2 seconds so it can be stretched to match the voice-over.
 
 ### Scene-by-scene storyboard
@@ -95,6 +96,106 @@ Timings are targets; stretch or trim each scene to fit the recorded voice-over.
 - On-screen text: Tomorrow: Your First API Calls
 - Voice-over cue (host): Preview Day 9 and Part 3.
 
+### Narration voice-over script (host only, do not generate audio)
+
+> For the host to read while recording. The video tool must not voice, sing, caption or display these sentences. About 1,290 words: roughly 10 minutes of speaking at a relaxed 130 words per minute, with the rest of the 14 min runtime left for pauses on visuals and demo steps. Each section starts where its scene begins; a **[bracketed cue]** marks the on-screen moment to start that line on. If you run short, pause on the visual; if you run long, stretch the scene.
+
+#### Scene 1 · 0:00 to 0:30 · Cold open hook
+
+**[laptop with Wi-Fi crossed out]** Look at the top of this laptop. Wi-Fi is off. No internet at all.
+
+**[chat window still answers]** And yet the chatbot is still answering questions. No cloud, no API bill, no data leaving the machine. Today, you'll set this up on your own computer.
+
+#### Scene 2 · 0:30 to 0:45 · Journey map
+
+**[Token at stop 8]** Welcome to Day 8, the last stop in Part 2. On Day 6 we met the open-weight models. Today we download one and run it ourselves.
+
+#### Scene 3 · 0:45 to 2:30 · Why local
+
+**[laptop appears]** Why would you run a model on your own machine when ChatGPT and Claude are a click away? Three big reasons.
+
+**[Privacy badge, lock]** One: **privacy**. Your prompts and your documents never leave your computer. For medical notes, legal files, company code or anything personal, that can be the deciding factor.
+
+**[No per-token cost badge]** Two: **cost**. Once the model is downloaded, every question is free. You can run thousands of experiments without watching a bill.
+
+**[Offline badge, plane]** Three: **offline**. It works on a plane, on a train, or anywhere the internet is bad.
+
+**[hold on all three]** The honest trade-offs: the models you can run on a laptop are smaller than the biggest cloud models, so they're not as smart at hard tasks, and they can be slower, depending on your hardware. But for summarizing, drafting, sorting and chatting, small open models are now surprisingly good.
+
+#### Scene 4 · 2:30 to 4:30 · Parameters and hardware
+
+**[1B lunchbox, 7B backpack, 70B truck]** The first thing to check is size, measured in parameters. A one-billion-parameter model is a lunchbox. Seven billion is a backpack. Seventy billion is a truck.
+
+**[RAM gauges fill]** What decides whether it fits is your computer's memory. Here's a rough rule of thumb. With the compressed versions most tools download, which I'll explain in a moment, you need a bit more than half a gigabyte of memory for every billion parameters, plus some room to spare. So a one- to three-billion model runs on almost any modern laptop. A seven- or eight-billion model is comfortable with about sixteen gigabytes of RAM. And seventy billion needs a serious workstation or a big GPU.
+
+**[GPU vs CPU race]** Speed depends on the chip. A model can run on your normal processor, the CPU, but a graphics chip, a GPU, is much faster, because it does thousands of small calculations at once. Apple Silicon Macs are great for this, because the GPU shares the main memory.
+
+**[hold]** If you're not sure what you have, start small. A three-billion model that answers quickly is more fun than a big one that crawls.
+
+#### Scene 5 · 4:30 to 6:15 · Quantization
+
+**[image steps down in resolution]** So how do billions of parameters fit on a laptop? A trick called **quantization**.
+
+**[16-bit label]** Normally, each weight is stored with sixteen bits of precision. That's very exact, and very big.
+
+**[8-bit, then 4-bit, file shrinks]** Quantization rounds each weight to fewer bits: eight, or even four. It's like lowering the resolution of a photo. The file gets much smaller, but you can still clearly see what it is. A four-bit model is roughly a quarter of the size, and usually loses only a little quality.
+
+**[GGUF file icon]** You'll see a file type called **GGUF** a lot. It's a format for these quantized models, made by the llama.cpp project, which is the engine running inside many local AI tools. When you see a model name ending in something like "Q4", that's a four-bit version. Smaller weights, nearly the same smarts.
+
+#### Scene 6 · 6:15 to 9:00 · Ollama walkthrough
+
+**[terminal card]** The easiest way to run local models is a free tool called **Ollama**. You install it once, and then everything happens with a few short commands.
+
+**[ollama pull, model file flies in]** First, `ollama pull`, followed by a model name from the Ollama library. This downloads the model, already quantized, onto your computer. You only do this once per model.
+
+**[ollama run]** Next, `ollama run` with the same name. That opens a chat right in your terminal. Type a question, press Enter, and the answer streams back, all on your own machine. Type slash bye to leave.
+
+**[call to localhost:11434]** Here's the really powerful part. While it's running, Ollama also starts a small local server at localhost, port one one four three four. That means your own code can talk to the model, just like it would talk to ChatGPT or Claude, except the request never leaves your computer.
+
+**[curl / Python call]** You can test it with a curl command, or from Python with the `ollama` package: import it, call `ollama.chat`, pass the model name and a list of messages, and print the reply. Look at those messages. They're the same role and content dictionaries we saw on Day 4 and Day 7. Ollama even offers an OpenAI-compatible endpoint, so a lot of code written for OpenAI can point at your local model with one small change. We'll use that on Day 9.
+
+**[hold]** If you prefer clicking to typing, **LM Studio** does the same job with a friendly desktop app. You search for a model, click download, and chat. It can also run a local server.
+
+#### Scene 7 · 9:00 to 11:00 · Hugging Face in Colab
+
+**[Colab notebook card]** The other way to use open models is with Python and the Hugging Face **transformers** library. This is what researchers and engineers use, and it gives you access to thousands of models on the Hub.
+
+**[free GPU badge]** If your laptop is small, use Google Colab. Go to Runtime, Change runtime type, and pick a GPU. It's free for light use.
+
+**[from transformers import pipeline types in]** Then the code is short. `from transformers import pipeline`. Then create a pipeline: tell it the task, "text-generation", and the name of a small model from the Hub.
+
+**[pipeline machine takes text in, returns text]** A pipeline is like a machine that hides all the complicated steps: it tokenizes your text, runs the model, and turns the tokens back into words. You pass in a prompt, and out comes generated text.
+
+**[hold]** The first run downloads the model, which can take a minute. After that it's quick. And the same pipeline idea works for other tasks too, like summarization, translation and sentiment analysis. Just change the task name.
+
+#### Scene 8 · 11:00 to 13:15 · Run Llama or Qwen on your laptop
+
+**[Ollama site]** Your homework. Go to ollama.com and download Ollama for your system. Install it like any other app.
+
+**[Ollama model library]** Click **Models** to see the library. Search for a small Llama or Qwen model, and pick a size that fits your memory. Around three billion parameters is a safe start. The model page shows the exact command to copy.
+
+**[terminal recording placeholder]** Open your terminal and paste it in. Wait for the download, then ask it something. Try a question you also asked ChatGPT on Day 6, and compare the answers. Watch how fast the words appear, too. That's your hardware at work. If it's painfully slow, try a smaller model. If it's quick, try a bigger one. Finding the biggest model your machine runs comfortably is part of the homework.
+
+**[LM Studio site]** If the terminal feels scary, install LM Studio from lmstudio.ai instead, and do the same thing with buttons.
+
+**[Hugging Face pipeline docs]** Then the final step: call your local model from Python. Install the `ollama` package with pip, and send it one message. When you see a reply printed in your own code, with Wi-Fi off, you've run AI completely on your own terms.
+
+**[hold]** If you want a stretch goal, try the transformers pipeline in Colab with the pipeline docs open beside you.
+
+#### Scene 9 · 13:15 to 13:45 · Recap
+
+**[card slides up]** Today in three lines.
+
+**[check 1]** Local models are private and free to run.
+
+**[check 2]** Pick a model size that fits your RAM.
+
+**[check 3]** And quantize, to fit big models into small machines. That's Part 2 complete.
+
+#### Scene 10 · 13:45 to 14:00 · Teaser
+
+**[map turns coral, Token enters Part 3]** Tomorrow, Part 3 begins, and we start building. Your first API calls to OpenAI and Anthropic. See you on Day 9.
+
 ### Web page references to show on screen
 
 Show each page in the browser-window frame described above, with the URL visible. Open each link and capture a fresh screenshot before rendering, since docs pages move and change (links written November 2026).
@@ -114,7 +215,6 @@ Install Ollama, run a small Llama or Qwen model, and call it from Python.
 
 ### Deliverables
 
-- Master video: 3840 x 2160, 30 fps, no narration, music and SFX on separate stems
-- Separate stems: music bed, sound effects
+- Master video: 3840 x 2160, 30 fps, silent (no narration, music or sound effects)
 - Thumbnail: 3840 x 2160 on the cream background, large title text "Day 8: Running Open-Source Models on Your Own Machine", mascot and the part accent color
 - Chapter markers matching the scene list, for the YouTube description
